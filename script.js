@@ -21,7 +21,34 @@ function showMovies(movies) {
 
   movies.forEach((movie) => {
     const { title, poster_path, vote_average, overview } = movie
+    
+    const movieEl = document.createElement('div')
+    movieEl.classList.add('movie')
+
+    movieEl.innerHTML = `
+    <div class="movie">
+          <img src="${IMG_PATH + poster_path}" alt="${title}">
+          <div class="movie-info"> 
+        <h3>${title}</h3>
+        <span class="green">${vote_average}</span>
+          </div>
+          <div class="overview">
+        <h3>Overview</h3>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa omnis mollitia reprehenderit temporibus voluptatem amet quisquam adipisci expedita laboriosam ex
+      </div>
+    </div>
+    `
   })
+}
+
+function getClassByRate(vote) {
+  if(vote >= 8) {
+    return 'green'
+  } else if (vote >= 5) {
+    return 'yellow'
+  } else {
+    return 'red'
+  }
 }
 
 form.addEventListener('submit', (e) => {
