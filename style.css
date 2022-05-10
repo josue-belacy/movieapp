@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap');
 
 :root {
-  --primary-color:#22254b; 
-  --secondary-color:#373b69;  
+  --primary-color: #22254b;
+  --secondary-color: #373b69;
 }
 
 * {
@@ -10,7 +10,7 @@
 }
 
 body {
-  background-color: var (--primary-color);
+  background-color: var(--primary-color);
   font-family: 'Poppins', sans-serif;
   margin: 0;
 }
@@ -37,13 +37,14 @@ header {
 }
 
 .search:focus {
-  outline: grey;
+  outline: none;
   background-color: var(--primary-color);
 }
 
 main {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .movie {
@@ -65,8 +66,9 @@ main {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 00.5rem 1rem 1rem;
-  letter-spacing: .5px;
+  gap:0.2rem;
+  padding: 0.5rem 1rem 1rem;
+  letter-spacing: 0.5px;
 }
 
 .movie-info h3 {
@@ -81,19 +83,19 @@ main {
 }
 
 .movie-info span.green {
-  color:lightgreen;
+  color: lightgreen;
 }
 
 .movie-info span.yellow {
-  color:yellow;
+  color: yellow;
 }
 
 .movie-info span.red {
-  color:red;
+  color: red;
 }
 
 .overview {
-  background-color: white;
+  background-color: #fff;
   padding: 2rem;
   position: absolute;
   left: 0;
@@ -101,9 +103,10 @@ main {
   right: 0;
   max-height: 100%;
   transform: translateY(101%);
+  overflow-y: auto;
   transition: transform 0.3s ease-in;
 }
 
-.movie:hover {
+.movie:hover .overview {
   transform: translateY(0);
 }
